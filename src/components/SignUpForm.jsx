@@ -26,17 +26,21 @@ export default function SignUpForm() {
       });
 
       if (response.ok) {
-        const data = await response.json();
-        // Log the successful response data
-        console.log("API call successful:", data);
+        // Handle successful response
+        const result = await response.json();
+        setSuccessMessage(result.message);
       } else {
+        // Handle error response
         const data = await response.json();
         setError(data.error);
       }
     } catch (error) {
+      // Handle fetch error
       console.error("Error during API call:", error);
+      setError("An unexpected error occurred.");
     }
-  }
+  };
+  
 
   return (
     <div>
