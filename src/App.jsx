@@ -4,7 +4,7 @@ import Authenticate from "./components/Authenticate";
 import SignUpForm from "./components/SignUpForm";
 import React from 'react';
 import { useState } from 'react';
-
+import viteReact from '@vitejs/plugin-react';
 
 export default function App() {
  
